@@ -1,5 +1,6 @@
 import puppeteer from "puppeteer";
 import katex from "katex";
+import path from "path"
 import express from "express";
 
 console.log();
@@ -72,7 +73,7 @@ app.get("/", async (req, res) => {
 
   await browser.close();
 
-  res.sendFile(__dirname.split("/").slice(0, 3).join("/") + "/example.png");
+  res.sendFile(path.resolve("../example.png"));
 });
 
 // (async () => {
