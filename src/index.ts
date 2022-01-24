@@ -24,7 +24,10 @@ app.get("/", async (req, res) => {
     throwOnError: false,
   });
   var j = "";
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    headless: true,
+    args: ["--incognito", "--no-sandbox", "--single-process", "--no-zygote"],
+  });
   const page = await browser.newPage();
   page.on("dialog", async (dialog) => {
     j = dialog.message();
