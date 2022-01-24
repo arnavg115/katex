@@ -102,6 +102,6 @@ app.get("/", async (req, res) => {
 //   await browser.close();
 // })();
 
-app.listen(8080, () => {
+app.listen(process.env.PORT, () => {
   console.log("Ready");
 });
