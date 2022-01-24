@@ -1,6 +1,6 @@
 import puppeteer from "puppeteer";
 import katex from "katex";
-import path from "path"
+import path from "path";
 import express from "express";
 
 console.log();
@@ -73,7 +73,7 @@ app.get("/", async (req, res) => {
 
   await browser.close();
 
-  res.sendFile(path.resolve("../example.png"));
+  res.sendFile(path.resolve("example.png"));
 });
 
 // (async () => {
@@ -103,6 +103,6 @@ app.get("/", async (req, res) => {
 //   await browser.close();
 // })();
 
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT || 8080, () => {
   console.log("Ready");
 });
